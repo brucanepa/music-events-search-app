@@ -18,7 +18,7 @@ const container = T => class SearchBar extends Component {
 
   onSearch = async(value) => {
     this.setState({value})
-    this.state.trigger({value: value});
+    this.state.trigger({value});
   }
 
   onPullToRefresh = () => {
@@ -28,6 +28,6 @@ const container = T => class SearchBar extends Component {
   render() {
     return <T onSearch={this.onSearch} onPullToRefresh={this.onPullToRefresh}/>
   }
-}
+};
 
 export default container;

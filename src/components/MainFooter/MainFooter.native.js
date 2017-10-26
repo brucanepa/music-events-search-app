@@ -2,10 +2,10 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {Text, Footer, Icon} from 'native-base';
 
-import dictionary from '../../utils/dictionary';
-import colors from '../../utils/colors';
+import dictionary from '../../constants/dictionary';
+import colors from '../../constants/colors';
 
-const CustomFooter = () => (
+const MainFooter = () => (
   <Footer style={styles.footer}>
     <Icon style={styles.icon} name="search"/>
     <Text style={styles.text}>
@@ -17,18 +17,20 @@ const CustomFooter = () => (
 const styles = StyleSheet.create({
   footer: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.MAIN_BACKGROUND_COLOR,
+    backgroundColor: colors.MAIN_BACKGROUND_COLOR
   },
   icon: {
-    paddingRight: 10,
+    flex: 2,
+    paddingBottom: 15,
     color: colors.MAIN_FONT_COLOR
   },
   text: {
+    flex: 3,
     color: colors.MAIN_FONT_COLOR
   }
 });
 
-export default CustomFooter;
+export default MainFooter;

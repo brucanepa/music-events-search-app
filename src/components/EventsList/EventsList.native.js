@@ -1,49 +1,57 @@
 import React, {Component} from 'react'
+import {StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
-import {Content, List, ListItem, Text} from 'native-base';
+import {Content, List, ListItem, Text, Title} from 'native-base';
 
+import container from '../../containers/EventsList';
 import Spinner from '../Spinner/Spinner.native';
 import Event from '../Event/Event.native';
-import dictionary from '../../utils/dictionary';
+import dictionary from '../../constants/dictionary';
 
-class EventsList extends Component {
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-    fetching: PropTypes.bool.isRequired,
-    filtered: PropTypes.bool.isRequired
+const createList = (data) => (
+  <Content>
+    <Title style={styles.title}>
+      {dictionary.artists.nextEventsTitle}
+    </Title>
+    <Content>
+      <List scrollEnabled>{data.map(item => {
+          return <Event key={item.id} {...item}/>
+        })}</List>
+    </Content>
+  </Content>
+);
+
+const showEvents = ({data, showList, showNotFound}) => {
+  if (showList()) {
+    return createList(data);
   }
-
-  shouldComponentUpdate(nextProps) {
-    const {fetching, data, filtered} = this.props;
-    return fetching != nextProps.fetching || data != nextProps.data || filtered != nextProps.filtered;
+  if (showNotFound()) {
+    return <Text style={styles.text}>{dictionary.artists.notFound}</Text>
   }
+  return <Text style={styles.text}>{dictionary.artists.nothingHere}</Text>;
+};
 
-  showList() {
-    const {data, filtered} = this.props;
+const showData = ({data, showLoading, showList, showNotFound}) => {
+  return showLoading()
+    ? <Spinner/>
+    : showEvents({data, showList, showNotFound});
+};
 
-    if (!data.length && filtered) {
-      return <Text>{dictionary.artists.notFound}</Text>
-    }
+const EventsList = ({data, showLoading, showList, showNotFound}) => (
+  <Content>
+    {showData({data, showLoading, showList, showNotFound})}
+  </Content>
+);
 
-    return <List scrollEnabled>{data.map(item => {
-        return <Event key={item.id} {...item}/>
-      })}</List>
+const styles = StyleSheet.create({
+  title: {
+    paddingTop: 10
+  },
+  text: {
+    alignSelf: 'center',
+    paddingTop: 20,
+    fontSize: 18
   }
+});
 
-  showData() {
-    const {fetching} = this.props;
-    return fetching
-      ? <Spinner/>
-      : this.showList();
-  }
-
-  render() {
-    return (
-      <Content>
-        {this.showData()}
-      </Content>
-    )
-  }
-}
-
-export default EventsList;
+export default container(EventsList);

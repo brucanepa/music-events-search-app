@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {Header, Text} from 'native-base';
 
-import dictionary from '../../utils/dictionary';
+import dictionary from '../../constants/dictionary';
 
 const CustomHeader = () => (
   <Header style={styles.header}>

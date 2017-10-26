@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import {Header, Item, Input, Icon, Button, Text} from 'native-base';
 
 import container from '../../containers/SearchBar';
-import dictionary from '../../utils/dictionary';
+import dictionary from '../../constants/dictionary';
+import colors from '../../constants/colors';
 
 class CustomSearchBar extends Component {
   static propTypes = {
@@ -15,17 +16,12 @@ class CustomSearchBar extends Component {
     return false;
   }
 
-  onChangeText = (text) => {
-    const {onSearch} = this.props;
-    onSearch && onSearch(text);
-  }
-
   render() {
     return (
       <Header style={styles.header} searchBar rounded>
         <Item>
           <Icon name="ios-search"/>
-          <Input placeholder={dictionary.searchBarTitle} onChangeText={this.onChangeText}/>
+          <Input placeholder={dictionary.searchBarTitle} onChangeText={this.props.onSearch}/>
           <Icon name="ios-people"/>
         </Item>
       </Header>
@@ -37,7 +33,8 @@ const styles = StyleSheet.create({
   header:{
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: colors.MAIN_BACKGROUND_COLOR
   }
 });
 
