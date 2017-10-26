@@ -8,7 +8,7 @@ import EventsList from '../EventsList/EventsList.native';
 const EventsListView = ({onSearch, events, fetching, writing, filtered}) => (
   <Container>
     <SearchBar onSearch={onSearch}/>
-    <EventsList data={events} fetching={fetching || writing} filtered={filtered}/>
+    <EventsList style={{width: '100%'}} data={events} fetching={fetching || writing} filtered={filtered}/>
   </Container>
 );
 

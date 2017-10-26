@@ -1,9 +1,14 @@
+import {API_TIMEOUT} from '../api/config';
+
 const getHeaders = () => ({'Accept': 'application/json', 'Content-Type': 'application/json'});
 
 const createRequest = (url) => {
   return new Request(url, {
-    method: 'GET',
-    headers: new Headers(getHeaders())
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    timeout: API_TIMEOUT
   });
 }
 

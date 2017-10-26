@@ -1,13 +1,12 @@
 import React from 'react';
 import {Container} from 'native-base';
 
-import Header from '../Header/Header.native';
 import EventsListView from '../EventsListView/EventsListView.native';
 import MainFooter from '../MainFooter/MainFooter.native';
 
 const MainView = () => (
   <Container>
-    <EventsListView/>
+    <EventsListView style={{width: '100%'}}/>
     <MainFooter/>
   </Container>
 );
