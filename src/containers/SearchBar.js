@@ -16,17 +16,33 @@ const container = T => class SearchBar extends Component {
     }
   }
 
-  onSearch = async(value) => {
+  shouldComponentUpdate() {
+    return false;
+  }
+
+  onSearch = (value) => {
     this.setState({value})
     this.state.trigger({value});
+  }
+
+  onCancel = () => {
+    this.onSearch('');
   }
 
   onPullToRefresh = () => {
     trigger({value: this.state.value, force: true});
   }
 
+  showCancel = () => {
+    return !!this.state.value;
+  }
+
   render() {
-    return <T onSearch={this.onSearch} onPullToRefresh={this.onPullToRefresh}/>
+    return <T
+      onSearch={this.onSearch}
+      onPullToRefresh={this.onPullToRefresh}
+      onCancel={this.onCancel}
+      showCancel={this.showCancel}/>
   }
 };
 
