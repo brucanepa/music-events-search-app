@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 
-import dictionary from '../constants/dictionary';
 import {getDate, getHour} from '../utils/datetime';
 
-const container = T => class Event extends Component {
+const container = T => class EventItem extends Component {
   static propTypes = {
-    artist_event_id: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
     artist_id: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     datetime: PropTypes.string.isRequired,
@@ -19,8 +18,7 @@ const container = T => class Event extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    const {artist_event_id} = this.props;
-    return artist_event_id != nextProps.artist_event_id;
+    return false;
   }
 
   render() {

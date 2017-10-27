@@ -29,10 +29,6 @@ const container = T => class SearchBar extends Component {
     this.onSearch('');
   }
 
-  onPullToRefresh = () => {
-    trigger({value: this.state.value, force: true});
-  }
-
   showCancel = () => {
     return !!this.state.value;
   }
@@ -40,7 +36,6 @@ const container = T => class SearchBar extends Component {
   render() {
     return <T
       onSearch={this.onSearch}
-      onPullToRefresh={this.onPullToRefresh}
       onCancel={this.onCancel}
       showCancel={this.showCancel}/>
   }

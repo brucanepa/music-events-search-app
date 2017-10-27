@@ -7,7 +7,8 @@ const container = T => class EventsList extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired,
     fetching: PropTypes.bool.isRequired,
-    filtered: PropTypes.bool.isRequired
+    filtered: PropTypes.bool.isRequired,
+    error: PropTypes.bool.isRequired
   }
 
   shouldComponentUpdate(nextProps) {
@@ -20,7 +21,7 @@ const container = T => class EventsList extends Component {
   }
 
   showList = () => {
-    return this.props.data.length;
+    return !!this.props.data.length;
   }
 
   showNotFound = () => {
@@ -28,9 +29,19 @@ const container = T => class EventsList extends Component {
     return filtered && !fetching;
   }
 
+  showError = () => {
+    const {error} = this.props;
+    return error;
+  }
+
   render() {
     const {data} = this.props;
-    return (<T data={data} showLoading={this.showLoading} showList={this.showList} showNotFound={this.showNotFound}/>)
+    return (<T
+      data={data}
+      showLoading={this.showLoading}
+      showList={this.showList}
+      showNotFound={this.showNotFound}
+      showError={this.showError}/>)
   }
 };
 

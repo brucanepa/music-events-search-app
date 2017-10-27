@@ -2,13 +2,12 @@ import delay from '../../utils/delay';
 
 export const getArtistEvents = async() => {
   await delay();
-  return [...artistEvents];
+  return {success: true, data: [...artistEvents]};
 };
 
 const artistEvents = [
   {
     "id": "15329935",
-    "artist_event_id": "19583286",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19583286?app_id=test&came_from=267",
     "on_sale_datetime": "2017-08-30T10:00:00",
@@ -31,7 +30,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Ásgeir"]
   }, {
     "id": "14501643",
-    "artist_event_id": "18441396",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18441396?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -54,7 +52,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14501644",
-    "artist_event_id": "18441397",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18441397?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -77,7 +74,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14501645",
-    "artist_event_id": "18441398",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18441398?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -100,7 +96,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14501646",
-    "artist_event_id": "18441399",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18441399?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -123,7 +118,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14501647",
-    "artist_event_id": "18441400",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18441400?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -146,7 +140,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "15014880",
-    "artist_event_id": "19141227",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19141227?app_id=test&came_from=267",
     "on_sale_datetime": "2017-07-10T08:00:00",
@@ -169,7 +162,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14501248",
-    "artist_event_id": "18440778",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18440778?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -192,7 +184,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14501249",
-    "artist_event_id": "18440779",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18440779?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -215,7 +206,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion"]
   }, {
     "id": "14501250",
-    "artist_event_id": "18440780",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18440780?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -238,7 +228,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14501251",
-    "artist_event_id": "18440781",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18440781?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-06T10:00:00",
@@ -261,7 +250,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14914993",
-    "artist_event_id": "19003926",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19003926?app_id=test&came_from=267",
     "on_sale_datetime": "2017-06-30T10:00:00",
@@ -284,7 +272,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14501252",
-    "artist_event_id": "18440782",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18440782?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -307,7 +294,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "15698496",
-    "artist_event_id": "18440783",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18440783?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -330,7 +316,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14957740",
-    "artist_event_id": "18440784",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18440784?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -353,7 +338,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14501255",
-    "artist_event_id": "18440785",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18440785?app_id=test&came_from=267",
     "on_sale_datetime": "2017-05-05T10:00:00",
@@ -376,7 +360,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Judah & The Lion", "Billy Raffoul"]
   }, {
     "id": "14383149",
-    "artist_event_id": "18277652",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18277652?app_id=test&came_from=267",
     "on_sale_datetime": "2017-04-15T10:00:00",
@@ -399,7 +382,6 @@ const artistEvents = [
     "lineup": ["Kaleo"]
   }, {
     "id": "14383108",
-    "artist_event_id": "18277606",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18277606?app_id=test&came_from=267",
     "on_sale_datetime": "2017-04-15T10:00:00",
@@ -422,7 +404,6 @@ const artistEvents = [
     "lineup": ["Kaleo"]
   }, {
     "id": "15048935",
-    "artist_event_id": "19188946",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19188946?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -445,7 +426,6 @@ const artistEvents = [
     "lineup": ["Kaleo"]
   }, {
     "id": "15048941",
-    "artist_event_id": "19188953",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19188953?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -468,7 +448,6 @@ const artistEvents = [
     "lineup": ["Kaleo"]
   }, {
     "id": "14854548",
-    "artist_event_id": "18891345",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18891345?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -491,7 +470,6 @@ const artistEvents = [
     "lineup": ["Kaleo"]
   }, {
     "id": "14854592",
-    "artist_event_id": "18891394",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/18891394?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -514,7 +492,6 @@ const artistEvents = [
     "lineup": ["Kaleo"]
   }, {
     "id": "15589922",
-    "artist_event_id": "19935971",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19935971?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -547,7 +524,6 @@ const artistEvents = [
     ]
   }, {
     "id": "15590106",
-    "artist_event_id": "19936166",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19936166?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -578,7 +554,6 @@ const artistEvents = [
     ]
   }, {
     "id": "15590781",
-    "artist_event_id": "19936872",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19936872?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -609,7 +584,6 @@ const artistEvents = [
     ]
   }, {
     "id": "15590864",
-    "artist_event_id": "19936963",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19936963?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -632,7 +606,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Red Hot Chili Peppers", "Pearl Jam", "Chance the Rapper", "Imagine Dragons"]
   }, {
     "id": "15590788",
-    "artist_event_id": "19936878",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19936878?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -662,7 +635,6 @@ const artistEvents = [
     ]
   }, {
     "id": "15590873",
-    "artist_event_id": "19936974",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19936974?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -685,7 +657,6 @@ const artistEvents = [
     "lineup": ["Kaleo", "Red Hot Chili Peppers", "Pearl Jam", "Chance the Rapper", "Imagine Dragons"]
   }, {
     "id": "15589850",
-    "artist_event_id": "19936276",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19936276?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -718,7 +689,6 @@ const artistEvents = [
     ]
   }, {
     "id": "15590882",
-    "artist_event_id": "19936981",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19936981?app_id=test&came_from=267",
     "on_sale_datetime": "",
@@ -749,7 +719,6 @@ const artistEvents = [
     ]
   }, {
     "id": "15590892",
-    "artist_event_id": "19936991",
     "artist_id": "21261",
     "url": "http://www.bandsintown.com/e/19936991?app_id=test&came_from=267",
     "on_sale_datetime": "",

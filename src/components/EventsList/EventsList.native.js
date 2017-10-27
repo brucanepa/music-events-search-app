@@ -1,46 +1,49 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
-import {Content, List, Text} from 'native-base';
+import {Container, Content, List, Text} from 'native-base';
 
 import container from '../../containers/EventsList';
 import Spinner from '../Spinner/Spinner.native';
-import Event from '../Event/Event.native';
+import EventItem from '../EventItem/EventItem.native';
 import ListHeader from '../ListHeader/ListHeader.native';
+import InitialListScreen from '../InitialListScreen/InitialListScreen.native';
 import dictionary from '../../constants/dictionary';
-import colors from '../../constants/colors';
 
 const createList = (data) => (
   <Content>
     <ListHeader title={dictionary.artists.nextEventsTitle}/>
     <List>
       {data.map(item => {
-        return <Event key={item.id} {...item}/>
+        return <EventItem key={item.id} {...item}/>
       })}
     </List>
   </Content>
 );
 
-const showEvents = ({data, showList, showNotFound}) => {
+const showEvents = ({data, showList, showNotFound, showError}) => {
+  if (showError()) {
+    return <ListHeader title={dictionary.connectionError}/>;
+  }
   if (showList()) {
     return createList(data);
   }
   if (showNotFound()) {
     return <ListHeader title={dictionary.artists.notFound}/>;
   }
-  return <ListHeader title={dictionary.artists.nothingHere}/>;
+  return <InitialListScreen/>;
 };
 
-const showData = ({data, showLoading, showList, showNotFound}) => {
+const showData = ({data, showLoading, showList, showNotFound, showError}) => {
   return showLoading()
     ? <Spinner/>
-    : showEvents({data, showList, showNotFound});
+    : showEvents({data, showList, showNotFound, showError});
 };
 
-const EventsList = ({data, showLoading, showList, showNotFound}) => (
-  <Content>
-    {showData({data, showLoading, showList, showNotFound})}
-  </Content>
+const EventsList = ({data, showLoading, showList, showNotFound, showError}) => (
+  <Container>
+    {showData({data, showLoading, showList, showNotFound, showError})}
+  </Container>
 );
 
 const styles = StyleSheet.create({

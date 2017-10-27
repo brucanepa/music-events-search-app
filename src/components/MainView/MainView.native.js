@@ -6,7 +6,7 @@ import MainFooter from '../MainFooter/MainFooter.native';
 
 const MainView = () => (
   <Container>
-    <EventsListView style={{width: '100%'}}/>
+    <EventsListView/>
     <MainFooter/>
   </Container>
 );

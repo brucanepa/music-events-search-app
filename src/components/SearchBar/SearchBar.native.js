@@ -27,7 +27,7 @@ class CustomSearchBar extends Component {
       <Header style={styles.header} searchBar rounded>
         <Item>
           <Icon name="ios-search"/>
-          <Input
+          <Input style={styles.input}
             ref={searchText => this._textInput = searchText}
             placeholder={dictionary.searchBarTitle}
             onChangeText={onSearch}/>
@@ -48,8 +48,12 @@ const styles = StyleSheet.create({
   icon: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+    paddingRight: 10
+  },
+  input:{
+    paddingBottom: 7
+  },
 });
 
 export default container(CustomSearchBar);

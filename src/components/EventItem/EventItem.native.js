@@ -1,9 +1,9 @@
 import React from 'react'
 import {ListItem, Text, Body, Right} from 'native-base';
 
-import container from '../../containers/Event';
+import container from '../../containers/EventItem';
 
-const Event = ({venue, date, hour, lineup}) => {
+const EventItem = ({venue, date, hour, lineup}) => {
   const {name, country, city} = venue;
   const artist = lineup[0];
   return (
@@ -22,4 +22,4 @@ const Event = ({venue, date, hour, lineup}) => {
   )
 };
 
-export default container(Event);
+export default container(EventItem);

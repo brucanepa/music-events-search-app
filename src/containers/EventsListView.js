@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 
-import {getArtistEvents} from '../api/services/artists';
+import {getArtistEvents, getArtist} from '../api/services/artists';
 
 const baseState = {
   events: [],
   fetching: false,
   writing: false,
-  filtered: false
+  filtered: false,
+  error: false
 };
 
 const container = T => class EventsListView extends Component {
@@ -22,18 +23,22 @@ const container = T => class EventsListView extends Component {
     return events != nextState.events || fetching != nextState.fetching || writing != nextState.writing;
   }
 
-  apiRequest = async(value) => {
+  saveEvent = async(value) => {
     this.setState({fetching: true, writing: false});
-    const events = await getArtistEvents(value);
-    this.setState({events, fetching: false});
+    const eventsResult = await getArtistEvents(value);
+    if (eventsResult.success) {
+      this.setState({events: eventsResult.data, fetching: false});
+    } else {
+      this.setState({error: true, fetching: false});
+    }
   }
 
   onSearch = ({value, writing}) => {
     const {events} = this.state;
     if (writing && value) {
-      this.setState({writing, filtered: true, events: events.length ? [] : events});
+      this.setState({writing, filtered: true, events: events.length ? [] : events, error: false});
     } else if (value) {
-      this.apiRequest(value);
+      this.saveEvent(value);
     } else {
       this.setState({...baseState});
     }
