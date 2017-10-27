@@ -12,9 +12,5 @@ const createRequest = (url) => {
 export const getHttp = (url) => {
   return fetch(createRequest(url))
     .then(response => response.json())
-    .catch(error => error);
-};
-
-export const networkError = (response) => {
-  return response.constructor === TypeError;
+    .catch(error => ({error}));
 };

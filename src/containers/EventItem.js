@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 
-import {getDate, getHour} from '../utils/datetime';
+import {getDate, getHourWithMinutes} from '../utils/datetime';
 
 const container = T => class EventItem extends Component {
   static propTypes = {
@@ -24,7 +24,7 @@ const container = T => class EventItem extends Component {
   render() {
     const {datetime} = this.props;
     const date = getDate(datetime);
-    const hour = getHour(datetime);
+    const hour = getHourWithMinutes(datetime);
     return (<T {...this.props} date={date} hour={hour}/>)
   }
 };

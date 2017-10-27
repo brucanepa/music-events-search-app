@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {NetInfo} from 'react-native';
 
 import {getArtistEvents, getArtist} from '../api/services/artists';
 
@@ -26,10 +27,10 @@ const container = T => class EventsListView extends Component {
   saveEvent = async(value) => {
     this.setState({fetching: true, writing: false});
     const eventsResult = await getArtistEvents(value);
-    if (eventsResult.success) {
-      this.setState({events: eventsResult.data, fetching: false});
-    } else {
+    if (eventsResult.error) {
       this.setState({error: true, fetching: false});
+    } else {
+      this.setState({events: eventsResult, fetching: false});
     }
   }
 

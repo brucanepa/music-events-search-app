@@ -2,7 +2,7 @@ import delay from '../../utils/delay';
 
 export const getArtistEvents = async() => {
   await delay();
-  return {success: true, data: [...artistEvents]};
+  return [...artistEvents];
 };
 
 const artistEvents = [
