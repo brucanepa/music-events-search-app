@@ -24,7 +24,7 @@ class CustomSearchBar extends Component {
   render() {
     const {onSearch} = this.props;
     return (
-      <Header style={styles.header} searchBar rounded>
+      <Header androidStatusBarColor={colors.MAIN_BACKGROUND_COLOR} style={styles.header} searchBar rounded>
         <Item>
           <Icon name="ios-search"/>
           <Input style={styles.input}
