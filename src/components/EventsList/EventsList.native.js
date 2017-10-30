@@ -46,6 +46,14 @@ const EventsList = ({data, showLoading, showList, showNotFound, showError}) => (
   </Container>
 );
 
+EventsList.propTypes = {
+  data: PropTypes.array.isRequired,
+  showLoading: PropTypes.func.isRequired,
+  showList: PropTypes.func.isRequired,
+  showNotFound: PropTypes.func.isRequired,
+  showError: PropTypes.func.isRequired,
+};
+
 const styles = StyleSheet.create({
   text: {
     alignSelf: 'center',

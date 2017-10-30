@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import {ListItem, Text, Body, Right} from 'native-base';
 
 import container from '../../containers/EventItem';
@@ -20,6 +21,17 @@ const EventItem = ({venue, date, hour, lineup}) => {
       </Right>
     </ListItem>
   )
+};
+
+EventItem.propTypes = {
+  date: PropTypes.string.isRequired,
+  hour: PropTypes.string.isRequired,
+  venue: PropTypes
+    .shape({name: PropTypes.string, country: PropTypes.string, city: PropTypes.string})
+    .isRequired,
+  lineup: PropTypes
+    .arrayOf(PropTypes.string)
+    .isRequired
 };
 
 export default container(EventItem);

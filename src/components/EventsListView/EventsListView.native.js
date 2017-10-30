@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import {StyleSheet} from 'react-native';
 import {Container} from 'native-base';
 
@@ -14,10 +15,19 @@ const EventsListView = ({onSearch, events, fetching, writing, filtered, error}) 
   </Container>
 );
 
+EventsListView.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+  events: PropTypes.array.isRequired,
+  fetching: PropTypes.bool.isRequired,
+  writing: PropTypes.bool.isRequired,
+  filtered: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
+};
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.SECOND_BACKGROUND_COLOR
   }
-})
+});
 
 export default container(EventsListView);
