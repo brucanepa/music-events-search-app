@@ -7,7 +7,6 @@ import MainFooter from '../MainFooter/MainFooter.native';
 const MainView = () => (
   <Container>
     <EventsListView/>
-    <MainFooter/>
   </Container>
 );
 
